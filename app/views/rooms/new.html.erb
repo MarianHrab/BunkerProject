@@ -1,0 +1,11 @@
+<!-- app/views/rooms/new.html.erb -->
+<h1>Create a Room</h1>
+
+<%= form_with(model: @room, url: rooms_path, local: true) do |form| %>
+  <%= form.label :user_id %>
+  <%= form.text_field :user_id %>
+
+  <!-- Додайте інші поля за потреби -->
+
+  <%= form.submit %>
+<% end %>

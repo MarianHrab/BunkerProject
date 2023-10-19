@@ -1,0 +1,2 @@
+class ConditionCardsController < ApplicationController
+end
