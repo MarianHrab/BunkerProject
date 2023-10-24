@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :rooms
+  resources :rooms, only: [:new, :create, :show] do
+    post 'take_slot', on: :member
+  end
   resources :sessions, only: [:new, :create, :destroy]
 end

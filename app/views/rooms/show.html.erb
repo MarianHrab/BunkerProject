@@ -1,0 +1,14 @@
+<!-- app/views/rooms/show.html.erb -->
+<h1><%= @room.name %></h1>
+
+<p>Available Slots: <%= @room.available_slots.join(', ') %></p>
+
+<% if user_signed_in? %>
+  <%= form_tag take_slot_room_path(@room), method: :post do %>
+    <%= label_tag 'Slot Number' %>
+    <%= text_field_tag 'slot_number' %>
+    <%= submit_tag 'Take Slot' %>
+  <% end %>
+<% else %>
+  <p>Please sign in to take a slot.</p>
+<% end %>
